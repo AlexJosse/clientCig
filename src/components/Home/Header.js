@@ -12,6 +12,7 @@ import SmokingRooms from '@material-ui/icons/SmokingRooms';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import { MenuComponent } from "./menuButton";
 import { AppButtonComponent } from "./menuButton";
+import { MenuListCompositionComponent } from "./menuButton";
 import green from '@material-ui/core/colors/green';
 
 const styles = theme => ({
@@ -121,6 +122,9 @@ class Header extends React.Component {
                         <AppButtonComponent
                             nameButton={"Accessoire"}
                             items={["Tubes", "Grilles", ""]}
+                        />
+                        <MenuListCompositionComponent
+                            nameMenu={"Accessoire"}
                         />
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
