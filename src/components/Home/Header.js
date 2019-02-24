@@ -119,10 +119,6 @@ class Header extends React.Component {
                         <Typography className={classes.title} variant="h6" color="inherit" noWrap>
                             Livraison de nuit
                         </Typography>
-                        <AppButtonComponent
-                            nameButton={"Accessoire"}
-                            items={["Tubes", "Grilles", ""]}
-                        />
                         <MenuListCompositionComponent
                             nameMenu={"Accessoire"}
                             items={["Tubes", "Grilles", ""]}

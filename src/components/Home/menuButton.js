@@ -177,7 +177,9 @@ class MenuListComposition extends React.Component {
                         aria-haspopup="true"
                         onClick={this.handleToggle}
                     >
+                        <Typography className={classes.accessoire} variant="h6" color="inherit" noWrap>
                         { nameMenu }
+                        </Typography>
                     </Button>
                     <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
                         {({ TransitionProps, placement }) => (
