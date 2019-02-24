@@ -125,6 +125,7 @@ class Header extends React.Component {
                         />
                         <MenuListCompositionComponent
                             nameMenu={"Accessoire"}
+                            items={["Tubes", "Grilles", ""]}
                         />
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>

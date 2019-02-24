@@ -162,6 +162,10 @@ class MenuListComposition extends React.Component {
         const { classes } = this.props;
         const { open } = this.state;
         const  nameMenu  = this.props.nameMenu;
+        const listItems = this.props.items.map((link) =>
+            <MenuItem onClick={this.handleClose} >{link}</MenuItem>
+        );
+
         return (
             <div className={classes.root}>
                 <div>
@@ -185,9 +189,7 @@ class MenuListComposition extends React.Component {
                                 <Paper>
                                     <ClickAwayListener onClickAway={this.handleClose}>
                                         <MenuList>
-                                            <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                                            <MenuItem onClick={this.handleClose}>My account</MenuItem>
-                                            <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                                            { listItems }
                                         </MenuList>
                                     </ClickAwayListener>
                                 </Paper>
