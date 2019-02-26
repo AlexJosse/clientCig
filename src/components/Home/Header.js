@@ -10,10 +10,12 @@ import { withStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import SmokingRooms from '@material-ui/icons/SmokingRooms';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import { MenuComponent } from "./menuButton";
 import { AppButtonComponent } from "./menuButton";
 import { MenuListCompositionComponent } from "./menuButton";
 import green from '@material-ui/core/colors/green';
+import Button from "@material-ui/core/Button";
 
 const styles = theme => ({
     root: {
@@ -80,6 +82,10 @@ const styles = theme => ({
         marginLeft: 10,
         paddingRight: theme.spacing.unit * 5,
     },
+    about: {
+        color: green.A700,
+
+    },
     sectionDesktop: {
         display: 'none',
         [theme.breakpoints.up('md')]: {
@@ -123,6 +129,16 @@ class Header extends React.Component {
                             nameMenu={"Accessoire"}
                             items={["Tubes", "Grilles", ""]}
                         />
+                        <Button>
+                            <Typography className={classes.about} variant="h6" color="inherit" noWrap>
+                                CONTACT
+                            </Typography>
+                        </Button>
+                        <Button>
+                            <Typography className={classes.about} variant="h6" color="inherit" noWrap>
+                                A PROPOS
+                            </Typography>
+                        </Button>
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
                                 <SearchIcon/>
@@ -137,13 +153,13 @@ class Header extends React.Component {
                         </div>
                         <div className={classes.grow}/>
                         <div className={classes.sectionDesktop}>
+                            <MenuComponent
+                                iconType={ShoppingCart}
+                                items={["items1", "items2", "items3", "items4"]}
+                            />
 
-                                <MenuComponent
-                                    iconType={AccountCircle}
-                                    items={["Create", "List1", "List2"]}
-                                />
-
-
+                        </div>
+                        <div className={classes.sectionDesktop}>
                                 <MenuComponent
                                     iconType={AccountCircle}
                                     items={["Profile", "User Management", "Logout"]}
