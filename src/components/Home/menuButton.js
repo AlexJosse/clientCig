@@ -24,6 +24,9 @@ const styles = theme => ({
     accessoire:{
        color: green.A700,
     },
+    circleButton:{
+        marginRight: 45,
+    },
 });
 
 class MenuApp extends React.Component {
@@ -52,6 +55,7 @@ class MenuApp extends React.Component {
         return (
             <div>
                 <IconButton
+                    className={classes.circleButton}
                     aria-owns={open ? 'header' : null}
                     aria-haspopup="true"
                     onClick={this.handleMenu}

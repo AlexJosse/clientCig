@@ -16,6 +16,7 @@ import { MenuListCompositionComponent } from "./menuButton";
 import green from '@material-ui/core/colors/green';
 import Button from "@material-ui/core/Button";
 
+
 const styles = theme => ({
     root: {
         width: '100%',
@@ -93,6 +94,30 @@ const styles = theme => ({
     },
 });
 
+function UserGreeting(props) {
+    return <MenuComponent
+            iconType={AccountCircle}
+            items={["Profile", "User Management", "Logout"]}
+            />;
+}
+
+function GuestGreeting(props) {
+    return  <MenuComponent
+        iconType={AccountCircle}
+        items={["Sign in", "Sign out"]}
+    />;
+}
+
+class Greeting extends React.Component {
+    render() {
+        const isLoginIn = this.props.isLoginIn;
+        if (isLoginIn) {
+            return <UserGreeting/>;
+        }
+        return <GuestGreeting/>;
+    }
+}
+
 class Header extends React.Component {
     state = {
         anchorEl: null
@@ -154,16 +179,13 @@ class Header extends React.Component {
                         <div className={classes.sectionDesktop}>
                             <MenuComponent
                                 iconType={ShoppingCart}
-                                items={["items1", "items2", "items3", "items4"]}
+                                items={["items1", "items2", "items3", "items4", "Afficher le panier"]}
                             />
 
                         </div>
-                        <div className={classes.sectionDesktop}>
-                                <MenuComponent
-                                    iconType={AccountCircle}
-                                    items={["Profile", "User Management", "Logout"]}
-                                />
 
+                        <div className={classes.sectionDesktop}>
+                            <Greeting isLoginIn={false}/>
                         </div>
                     </Toolbar>
                 </AppBar>
