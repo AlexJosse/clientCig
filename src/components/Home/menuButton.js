@@ -43,13 +43,18 @@ class MenuApp extends React.Component {
         this.setState({ anchorEl: null });
     };
 
+    handleConnection = event => {
+        alert(event.target.value);
+    }
+
     render() {
         const { classes } = this.props;
         const { anchorEl } = this.state;
         const open = Boolean(anchorEl);
         const Wrapper = this.props.iconType;
+       // alert(this.props.items);
         const listItems = this.props.items.map((link) =>
-            <MenuItem onClick={this.handleClose} >{link}</MenuItem>
+            <MenuItem  >{link}</MenuItem>
         );
 
         return (
@@ -73,7 +78,9 @@ class MenuApp extends React.Component {
                             <Paper>
                                 <ClickAwayListener onClickAway={this.handleClose}>
                                     <MenuList>
-                                        { listItems }
+                                      <MenuItem>
+                                          lslsls
+                                      </MenuItem>
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>
@@ -103,6 +110,7 @@ class MenuListComposition extends React.Component {
 
         this.setState({ open: false });
     };
+
 
     render() {
         const { classes } = this.props;
