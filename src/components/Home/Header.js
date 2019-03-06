@@ -104,7 +104,7 @@ function UserGreeting(props) {
 function GuestGreeting(props) {
     return  <MenuComponent
         iconType={AccountCircle}
-        items={["Sign in", "Sign out"]}
+        items={["Sign in"]}
     />;
 }
 
@@ -135,8 +135,6 @@ class Header extends React.Component {
     render() {
         const { anchorEl  } = this.state;
         const { classes } = this.props;
-
-        const open = Boolean(anchorEl);
 
         return (
 
@@ -185,7 +183,7 @@ class Header extends React.Component {
                         </div>
 
                         <div className={classes.sectionDesktop}>
-                            <Greeting isLoginIn={false}/>
+                            <Greeting isLoginIn={true}/>
                         </div>
                     </Toolbar>
                 </AppBar>

@@ -43,8 +43,8 @@ class MenuApp extends React.Component {
         this.setState({ anchorEl: null });
     };
 
-    handleConnection = event => {
-        alert(event.target.value);
+    handleConnection = (param) => event => {
+        console.log('Parameter', param);
     }
 
     render() {
@@ -52,9 +52,8 @@ class MenuApp extends React.Component {
         const { anchorEl } = this.state;
         const open = Boolean(anchorEl);
         const Wrapper = this.props.iconType;
-       // alert(this.props.items);
         const listItems = this.props.items.map((link) =>
-            <MenuItem  >{link}</MenuItem>
+            <MenuItem onClick={this.handleConnection(link)} >{link}</MenuItem>
         );
 
         return (
@@ -78,9 +77,7 @@ class MenuApp extends React.Component {
                             <Paper>
                                 <ClickAwayListener onClickAway={this.handleClose}>
                                     <MenuList>
-                                      <MenuItem>
-                                          lslsls
-                                      </MenuItem>
+                                        {listItems}
                                     </MenuList>
                                 </ClickAwayListener>
                             </Paper>
