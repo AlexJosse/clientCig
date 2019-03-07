@@ -10,6 +10,7 @@ import Grow from "@material-ui/core/Grow";
 import Paper from "@material-ui/core/Paper";
 import MenuList from "@material-ui/core/MenuList";
 import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import API from '../../utils/API.js';
 
 const styles = theme => ({
     title: {
@@ -44,8 +45,12 @@ class MenuApp extends React.Component {
     };
 
     handleConnection = (param) => event => {
-        if (param == "Sign in") {
+        if (param === "Sign in") {
             window.location = "/signup"
+        }
+        if (param === "Logout"){
+            API.logout();
+            window.location.reload();
         }
     }
 
