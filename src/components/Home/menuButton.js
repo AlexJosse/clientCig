@@ -44,7 +44,9 @@ class MenuApp extends React.Component {
     };
 
     handleConnection = (param) => event => {
-        console.log('Parameter', param);
+        if (param == "Sign in") {
+            window.location = "/signup"
+        }
     }
 
     render() {

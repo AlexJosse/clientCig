@@ -15,7 +15,7 @@ import { MenuComponent } from "./menuButton";
 import { MenuListCompositionComponent } from "./menuButton";
 import green from '@material-ui/core/colors/green';
 import Button from "@material-ui/core/Button";
-
+import API from '../../utils/API.js';
 
 const styles = theme => ({
     root: {
@@ -108,13 +108,13 @@ function GuestGreeting(props) {
     />;
 }
 
+//check token here
 class Greeting extends React.Component {
     render() {
-        const isLoginIn = this.props.isLoginIn;
-        if (isLoginIn) {
+        if (API.isAuth() === true)
             return <UserGreeting/>;
-        }
-        return <GuestGreeting/>;
+        else
+            return <GuestGreeting/>;
     }
 }
 
@@ -183,7 +183,7 @@ class Header extends React.Component {
                         </div>
 
                         <div className={classes.sectionDesktop}>
-                            <Greeting isLoginIn={true}/>
+                            <Greeting/>
                         </div>
                     </Toolbar>
                 </AppBar>
