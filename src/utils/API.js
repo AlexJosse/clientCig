@@ -22,5 +22,8 @@ export default {
     },
     logout : function() {
         localStorage.clear();
+    },
+    article : function () {
+        return axios.post(burl + '/user/article', {headers: headers})
     }
 }

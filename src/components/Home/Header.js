@@ -136,7 +136,13 @@ class Header extends React.Component {
         const { anchorEl  } = this.state;
         const { classes } = this.props;
 
+        alert("sll");
+        API.article().then(function(data){
+            console.log(data);
+        })
+
         return (
+
 
             <div className={classes.root}>
                 <AppBar className={classes.appBar}>
